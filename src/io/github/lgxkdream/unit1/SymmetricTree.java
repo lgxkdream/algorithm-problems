@@ -23,7 +23,7 @@ import io.github.lgxkdream.common.TreeNode;
 				   3    3
  * @Copyright: Copyright (c) 2018
  * @Company: lgxkdream.github.io
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年11月12日 下午8:48:39
  */

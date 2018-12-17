@@ -8,7 +8,7 @@ import io.github.lgxkdream.common.ListNode;
  * @description: 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
  * @Copyright: Copyright (c) 2018
  * @Company: www.maodou.com
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年11月20日 下午12:17:48
  */

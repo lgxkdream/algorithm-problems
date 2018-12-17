@@ -16,7 +16,7 @@ import io.github.lgxkdream.common.ListNode;
 				 输出: [1,2,2,3,5,6]
  * @Copyright: Copyright (c) 2018
  * @Company: lgxkdream.github.io
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年11月14日 下午6:04:03
  */

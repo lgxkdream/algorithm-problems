@@ -9,7 +9,7 @@ package io.github.lgxkdream.unit1;
 				 输出: 6
  * @Copyright: Copyright (c) 2018
  * @Company: www.maodou.com
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年10月31日 上午10:48:08
  */

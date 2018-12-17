@@ -15,7 +15,7 @@ import io.github.lgxkdream.common.ListNode;
 				 给定的 n 保证是有效的。
  * @Copyright: Copyright (c) 2018
  * @Company: lgxkdream.github.io
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年12月14日 下午5:19:15
  */
@@ -33,7 +33,7 @@ public class RemoveNthNodeFromEndOfList {
 		node3.next = node4;
 		node4.next = node5;
 		ListNode newRoot = removeNthFromEnd1(node1, 1);
-		// ListNode newRoot = removeNthFromEnd2(node1, 3);
+//		ListNode newRoot = removeNthFromEnd2(node1, 3);
 		System.out.println("=================");
 		while (newRoot != null) {
 			System.out.println(newRoot.val);

@@ -16,7 +16,7 @@ package io.github.lgxkdream.unit1;
 				      coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
  * @Copyright: Copyright (c) 2018
  * @Company: lgxkdream.github.io
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年12月14日 下午5:12:41
  */

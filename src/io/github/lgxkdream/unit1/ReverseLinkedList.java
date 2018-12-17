@@ -11,7 +11,7 @@ import io.github.lgxkdream.common.Node;
 				 输出: 5->4->3->2->1->NULL
  * @Copyright: Copyright (c) 2018
  * @Company: lgxkdream.github.io
- * @author LiGang
+ * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年10月31日 下午8:37:19
  */
