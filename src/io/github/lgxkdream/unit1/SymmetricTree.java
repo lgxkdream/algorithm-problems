@@ -28,6 +28,7 @@ import io.github.lgxkdream.common.TreeNode;
  * @since 2018年11月12日 下午8:48:39
  */
 public class SymmetricTree {
+	
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode();
 		System.out.println(isSymmetric1(root));

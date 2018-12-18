@@ -46,11 +46,11 @@ public class ReverseNodesInkGroup {
             count++;
         }
         if (count == k) {
-            currentNode = reverseKGroup(currentNode, k);/// 递归的解决子问题
+            currentNode = reverseKGroup(currentNode, k); // 递归的解决子问题
             while (count-- > 0) { // 将头节点从链表中切掉，放在下一组链表的前端，切除k次，即可将链表翻转
                 ListNode temp = head.next; // 保存该组链表的第二个节点
                 head.next = currentNode; // head节点的下一位指向currentNode(第一次循环时是下一组链表的头节点，之后每截取一次就往前移)
-                currentNode = head;  // currentNode节点前移到head
+                currentNode = head; // currentNode节点前移到head
                 head = temp; // head节点重新指向该组的第一个节点，开始下次循环
             }
             head = currentNode; //最终，该段的所有节点将会截空，head应指向currentNode
