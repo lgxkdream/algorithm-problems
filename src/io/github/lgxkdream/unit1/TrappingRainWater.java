@@ -8,7 +8,7 @@ package io.github.lgxkdream.unit1;
 				 输入: [0,1,0,2,1,0,1,3,2,1,2,1]
 				 输出: 6
  * @Copyright: Copyright (c) 2018
- * @Company: www.maodou.com
+ * @Company: lgxkdream.github.io
  * @author Jackie Lee
  * @version 1.0.0
  * @since 2018年10月31日 上午10:48:08
