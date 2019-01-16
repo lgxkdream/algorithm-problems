@@ -48,7 +48,7 @@ public class SymmetricTree {
 			if (node1 == null || node2 == null) {
 				return false;
 			}
-			if (node1.var != node2.var) {
+			if (node1.val != node2.val) {
 				return false;
 			}
 			queue.offer(node1.left);
@@ -70,7 +70,7 @@ public class SymmetricTree {
 		if (root1 == null || root2 == null) {
 			return false;
 		}
-		return (root1.var == root2.var) && isMirror(root1.right, root2.left) && isMirror(root1.left, root2.right);
+		return (root1.val == root2.val) && isMirror(root1.right, root2.left) && isMirror(root1.left, root2.right);
 	}
 	
 }

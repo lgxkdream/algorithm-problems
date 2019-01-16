@@ -2,7 +2,7 @@ package io.github.lgxkdream.common;
 
 public class TreeNode {
 
-	public int var;
+	public int val;
 	public TreeNode left;
 	public TreeNode right;
 	
