@@ -4,7 +4,7 @@ import io.github.lgxkdream.common.ListNode;
 
 /**
  * 
- * @title: MergeSortedArray(合并两个有序链表)
+ * @title: MergeTwoSortedLists(合并两个有序链表)
  * @description: 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
 				 说明:
 				 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
@@ -20,7 +20,7 @@ import io.github.lgxkdream.common.ListNode;
  * @version 1.0.0
  * @since 2018年11月14日 下午6:04:03
  */
-public class MergeSortedArray {
+public class MergeTwoSortedLists {
 
 	public static void main(String[] args) {
 		ListNode root = new ListNode(1);
