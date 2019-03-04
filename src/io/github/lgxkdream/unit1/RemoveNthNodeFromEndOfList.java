@@ -72,11 +72,11 @@ public class RemoveNthNodeFromEndOfList {
 		}
 		for (int k = 0; k <= n; k++) { // 逐个弹栈，相当于链表从后向前遍历
 			ListNode peek = stack.pop();
-			if (k == n) { // 将要删除节点的前一个节点指向要删除节点的后一个节点
-				peek.next = temp;
-			}
 			if (k == n - 2) { // 保存要删除的节点的后一个节点
 				temp = peek;
+			}
+			if (k == n) { // 将要删除节点的前一个节点指向要删除节点的后一个节点
+				peek.next = temp;
 			}
 		}
 		return head;
