@@ -1,21 +1,8 @@
-package io.github.lgxkdream.unit1;
+package io.github.lgxkdream.test;
 
 import io.github.lgxkdream.common.Node;
 
-/**
- * 
- * @title: ReverseLinkedList(单链表反转)
- * @description: 反转一个单链表。
-				 示例:
-		         输入: 1->2->3->4->5->NULL
-				 输出: 5->4->3->2->1->NULL
- * @Copyright: Copyright (c) 2018
- * @Company: lgxkdream.github.io
- * @author Jackie Lee
- * @version 1.0.0
- * @since 2018年10月31日 下午8:37:19
- */
-public class ReverseLinkedList {
+public class ReverseLinkedListTest {
 
 	public static void main(String[] args) {
 		Node head = new Node(0);
@@ -36,39 +23,29 @@ public class ReverseLinkedList {
 			System.out.print(h.getData() + " ");
 			h = h.getNext();
 		}
-		
+
+		System.out.println();
 		Node h1 = head;
 		// 调用反转方法1
-		h1 = reverse1(h1);
-		System.out.println("\n************11**************");
+		h1 = reverse(h1);
 		// 打印反转后的结果
 		while (null != h1) {
 			System.out.print(h1.getData() + " ");
 			h1 = h1.getNext();
 		}
-		
-		Node h2 = head;
-		// 调用反转方法2
-		h2 = reverse2(h2);
-		System.out.println("\n************22**************");
-		// 打印反转后的结果
-		while (null != h2) {
-			System.out.print(h2.getData() + " ");
-			h2 = h2.getNext();
-		}
 	}
 
-	private static Node reverse1(Node head) {
+	private static Node reverse(Node head) {
 		if (head == null || head.getNext() == null) {
 			return head;
 		}
-		Node reHead = reverse1(head.getNext());
+		Node reHead = reverse(head.getNext());
 		head.getNext().setNext(head);
 		head.setNext(null);
 		return reHead;
 	}
 	
-	private static Node reverse2(Node head) {
+	private static Node reverse1(Node head) {
 		if (head == null) {
 			return head;
 		}
