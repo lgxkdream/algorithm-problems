@@ -40,7 +40,8 @@ public class LinkedListCycleII {
 			slow = slow.next;
 			fast = fast.next.next;
 		}
-		slow = slow.next; // 少走一步，补上
+		// 少走一步，补上
+		slow = slow.next;
 		while (slow != head) {
 			slow = slow.next;
 			head = head.next;

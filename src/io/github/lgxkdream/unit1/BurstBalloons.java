@@ -34,9 +34,12 @@ public class BurstBalloons {
 		for (int i = 0; i < nums.length; i++) {
 			coins[i + 1] = nums[i];
 		}
-		for (int i = 2; i < coins.length; i++) { // 外层循环区间间隔，也即每组气球的个数，2~nums.length；
-			for (int j = 0; i + j < coins.length; j++) { // 中层获取每组气球的起始下标
-				for (int k = j + 1; k < i + j; k++) { // 内层获取戳破的气球
+		// 外层循环区间间隔，也即每组气球的个数，2~nums.length；
+		for (int i = 2; i < coins.length; i++) {
+			// 中层获取每组气球的起始下标
+			for (int j = 0; i + j < coins.length; j++) {
+				// 内层获取戳破的气球
+				for (int k = j + 1; k < i + j; k++) {
 					dp[j][i + j] = Math.max(dp[j][i + j], dp[j][k] + dp[k][i + j] + coins[j] * coins[k] * coins[i + j]);
 				}
 			}
