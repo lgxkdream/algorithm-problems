@@ -33,6 +33,15 @@ public class ReverseLinkedListTest {
 			System.out.print(h1.getData() + " ");
 			h1 = h1.getNext();
 		}
+
+		System.out.println("=========");
+		Node heada = new Node(0);
+		Node node = reverse1(heada);
+		// 打印反转后的结果
+		while (null != node) {
+			System.out.print(node.getData() + " ");
+			node = node.getNext();
+		}
 	}
 
 	private static Node reverse(Node head) {
