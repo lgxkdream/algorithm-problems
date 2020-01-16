@@ -33,14 +33,16 @@ public class MergeSortedArray {
 
 	private static void merge(int[] nums1, int m, int[] nums2, int n) {
 		int total = m + n;
-		while (m > 0 && n > 0) { // 从后向前比较nums1和nums2大小
+		// 从后向前比较nums1和nums2大小
+		while (m > 0 && n > 0) {
 			if (nums1[m - 1] >= nums2[n - 1]) {
 				nums1[--total] = nums1[--m];
 			} else {
 				nums1[--total] = nums2[--n];
 			}
 		}
-		while (n > 0) { // 如果n先到达0就能直接得到合并好的数组；如果m先到达0，只需将n剩下的元素复制到nums1中即可
+		// 如果n先到达0就能直接得到合并好的数组；如果m先到达0，只需将n剩下的元素复制到nums1中即可
+		while (n > 0) {
 			nums1[--total] = nums2[--n];
 		}
 	}
