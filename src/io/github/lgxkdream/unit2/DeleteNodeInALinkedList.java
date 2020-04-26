@@ -49,8 +49,10 @@ public class DeleteNodeInALinkedList {
 	}
 	
 	public static void deleteNode(ListNode node) {
-        node.val = node.next.val; // 将想要删除的节点的值替换为它后面节点中的值
-        node.next = node.next.next; // 删除它之后的节点
+        // 将想要删除的节点的值替换为它后面节点中的值
+        node.val = node.next.val;
+        // 删除它之后的节点
+        node.next = node.next.next;
     }
 
 }

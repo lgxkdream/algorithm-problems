@@ -45,11 +45,6 @@ public class MergeTwoSortedLists {
 		}
 	}
 
-	/**
-	 * Definition for singly-linked list. public class ListNode { int val;
-	 * ListNode next; ListNode(int x) { val = x; } }
-	 */
-
 	public static ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
 		ListNode result = null;
 		if (l1 == null) {
@@ -65,20 +60,6 @@ public class MergeTwoSortedLists {
 			result = l2;
 			result.next = mergeTwoLists1(l2.next, l1);
 		}
-
-		// if (l1 == null) {
-		// return l2;
-		// }
-		// if (l2 == null) {
-		// return l1;
-		// }
-		// if (l1.val <= l2.val) {
-		// result = l1;
-		// l1.next = mergeTwoLists1(l1.next, l2); // 递归
-		// } else {
-		// result = l2;
-		// l2.next = mergeTwoLists1(l1, l2.next);
-		// }
 		return result;
 	}
 

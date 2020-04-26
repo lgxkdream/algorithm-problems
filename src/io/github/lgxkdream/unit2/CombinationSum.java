@@ -19,7 +19,7 @@ import java.util.List;
  *                 [7],
  *                 [2,2,3]
  *               ]
- * @Copyright: Copyright (c) 2019
+ * @Copyright: Copyright (c) 2020
  * @company: lgxkdream.github.io
  * @author Jackie Lee
  * @version 1.0.0

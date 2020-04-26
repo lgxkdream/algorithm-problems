@@ -1,4 +1,4 @@
-package io.github.lgxkdream.test;
+package io.github.lgxkdream.test.other;
 
 import io.github.lgxkdream.common.ListNode;
 
