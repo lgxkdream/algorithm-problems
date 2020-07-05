@@ -43,7 +43,7 @@ public class NumberOfIslands {
     }
 
     /**
-     * 标记发现的新岛
+     * 标记发现的新岛 广度优先遍历
      *
      * @param grid
      * @param i

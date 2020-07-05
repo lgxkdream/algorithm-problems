@@ -1,5 +1,6 @@
 package io.github.lgxkdream.unit2;
 
+import io.github.lgxkdream.common.CommonMethod;
 import io.github.lgxkdream.common.ListNode;
 
 /**
@@ -42,10 +43,7 @@ public class DeleteNodeInALinkedList {
 		node4.next = node5;
 		deleteNode(node3);
 		System.out.println("=================");
-		while (node1 != null) {
-			System.out.println(node1.val);
-			node1 = node1.next;
-		}
+		CommonMethod.printlnLinkedList(node1);
 	}
 	
 	public static void deleteNode(ListNode node) {

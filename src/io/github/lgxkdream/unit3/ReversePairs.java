@@ -1,4 +1,4 @@
-package io.github.lgxkdream.test.unit6;
+package io.github.lgxkdream.unit3;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @description https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/
  * @since 2020-04-24 09:57
  */
-public class LCOF {
+public class ReversePairs {
 
     public static void main(String[] args) {
         int[] nums = {7, 5, 6, 4};
@@ -18,6 +18,12 @@ public class LCOF {
         System.out.println(Arrays.toString(nums));
     }
 
+    /**
+     * 归并排序思想
+     *
+     * @param nums
+     * @return
+     */
     public static int reversePairs(int[] nums) {
         int[] temp = new int[nums.length];
         return reversePairs(nums, 0, nums.length - 1, temp);

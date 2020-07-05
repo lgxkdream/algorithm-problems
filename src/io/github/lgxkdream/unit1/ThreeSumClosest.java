@@ -17,6 +17,10 @@ import java.util.Arrays;
 public class ThreeSumClosest {
 
 	public static void main(String[] args) {
+		/**
+		 * 输出：2
+		 * 解释：与 target 最接近的和是 2 (-1 + 2 + 1 = 2) 。
+		 */
 		int[] nums = { -1, 2, 1, -4 };
 		System.out.println(threeSumClosest(nums, 1)); // 2
 	}

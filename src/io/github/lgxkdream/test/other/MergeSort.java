@@ -18,15 +18,18 @@ public class MergeSort {
     }
 
     public static void sort(int[] arr) {
-        int[] temp = new int[arr.length];//在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间
+        // 在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间
+        int[] temp = new int[arr.length];
         sort(arr, 0, arr.length - 1, temp);
     }
 
     private static void sort(int[] arr, int left, int right, int[] temp) {
         if (left < right) {
             int mid = (left + right) / 2;
+            // 拆分成两半
             sort(arr, left, mid, temp);
             sort(arr, mid + 1, right, temp);
+            // 比较合并
             merge(arr, left, mid, right, temp);
         }
     }
@@ -40,12 +43,15 @@ public class MergeSort {
                 temp[k++] = arr[j++];
             }
         }
+        // 前半段有剩余
         while (i <= mid) {
             temp[k++] = arr[i++];
         }
+        // 后半段有剩余
         while (j <= right) {
             temp[k++] = arr[j++];
         }
+        // 排好序后赋给原数组
         while (left <= right) {
             arr[left] = temp[left++];
         }

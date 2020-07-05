@@ -7,7 +7,7 @@ import java.util.Queue;
 /**
  * @author Jackie Lee
  * @version 1.0.0
- * @title UpdateMatrix
+ * @title 542. 01 矩阵
  * @description https://leetcode-cn.com/problems/01-matrix/
  * @since 2020-04-15 10:07
  */
@@ -23,6 +23,12 @@ public class UpdateMatrix {
         System.out.println(Arrays.deepToString(updateMatrix(matrix)));
     }
 
+    /**
+     * 广度优先遍历
+     *
+     * @param matrix
+     * @return
+     */
     public static int[][] updateMatrix(int[][] matrix) {
         if (matrix == null || matrix.length == 0) {
             return matrix;

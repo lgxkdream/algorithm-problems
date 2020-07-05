@@ -1,5 +1,7 @@
 package io.github.lgxkdream.test.unit6;
 
+import java.util.Arrays;
+
 /**
  * @author Jackie Lee
  * @version 1.0.0
@@ -10,9 +12,29 @@ package io.github.lgxkdream.test.unit6;
 public class CountNumberOfNiceSubarrays {
 
     public static void main(String[] args) {
-        int[] nums = {2, 2, 2, 1, 2, 2, 1, 2, 1, 2};
-        int k = 2;
-        System.out.println(numberOfSubarrays1(nums, k)); // 16
+        // int[] nums = {2, 2, 2, 1, 2, 2, 1, 2, 1, 2};
+        int[] nums = {2, 2, 1};
+        int k = 1;
+        System.out.println(numberOfSubarrays2(nums, k)); // 16
+    }
+
+    public static int numberOfSubarrays2(int[] nums, int k) {
+        // 数组 prefixCnt 的下标是前缀和（即当前奇数的个数），值是前缀和的个数。
+        int[] prefixCnt = new int[nums.length + 1];
+        prefixCnt[0] = 1;
+        // 遍历原数组，计算当前的前缀和，统计到 prefixCnt 数组中，
+        // 并且在 res 中累加上与当前前缀和差值为 k 的前缀和的个数。
+        int res = 0, sum = 0;
+        for (int num: nums) {
+            sum += num & 1;
+            prefixCnt[sum]++;
+            if (sum >= k) {
+                System.out.println(sum + " " + prefixCnt[sum - k]);
+                res += prefixCnt[sum - k];
+            }
+        }
+        System.out.println(Arrays.toString(prefixCnt));
+        return res;
     }
 
     public static int numberOfSubarrays1(int[] nums, int k) {

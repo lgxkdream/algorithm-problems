@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * @author Jackie Lee
  * @version 1.0.0
- * @title AsFarFromLandAsPossible
+ * @title 1162. 地图分析
  * @description https://leetcode-cn.com/problems/as-far-from-land-as-possible/
  * @since 2020-03-27 10:03
  */
@@ -18,6 +18,12 @@ public class AsFarFromLandAsPossible {
         System.out.println(maxDistance1(grid));
     }
 
+    /**
+     * 广度优先遍历思想
+     *
+     * @param grid
+     * @return
+     */
     public static int maxDistance1(int[][] grid) {
         Queue<Point> queue = new LinkedList<>();
         for (int i = 0; i < grid.length; i++) {

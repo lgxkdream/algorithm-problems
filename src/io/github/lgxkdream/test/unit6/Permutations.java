@@ -15,9 +15,16 @@ public class Permutations {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
+        // [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
         System.out.println(permute(nums));
     }
 
+    /**
+     * 回溯算法
+     *
+     * @param nums
+     * @return
+     */
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();

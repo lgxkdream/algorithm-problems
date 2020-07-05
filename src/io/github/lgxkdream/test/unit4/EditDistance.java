@@ -3,11 +3,11 @@ package io.github.lgxkdream.test.unit4;
 /**
  * @author Jackie Lee
  * @version 1.0.0
- * @title MinDistance
+ * @title 72. 编辑距离
  * @description https://leetcode-cn.com/problems/edit-distance/
  * @since 2020-04-06 11:03
  */
-public class MinDistance {
+public class EditDistance {
 
     public static void main(String[] args) {
         // String word1 = "horse", word2 = "ros"; // 3
@@ -33,6 +33,7 @@ public class MinDistance {
     }
 
     /**
+     * 动态规划思想
      * 最后一位不一样
      * dp(i, j) = 1 + min(dp(i-1, j),dp(i, j-1),dp(i-1, j-1))
      * 最后一位一样

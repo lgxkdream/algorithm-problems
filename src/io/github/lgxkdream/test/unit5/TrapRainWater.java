@@ -20,6 +20,12 @@ public class TrapRainWater {
         System.out.println(trapRainWater(heightMap)); // 4
     }
 
+    /**
+     * 广度优先遍历
+     *
+     * @param heightMap
+     * @return
+     */
     public static int trapRainWater(int[][] heightMap) {
         if (heightMap == null || heightMap.length < 3 || heightMap[0].length < 3) {
             return 0;

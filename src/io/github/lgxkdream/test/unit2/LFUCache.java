@@ -7,8 +7,8 @@ import java.util.Map;
 /**
  * @author Jackie Lee
  * @version 1.0.0
- * @title LFUCache
- * @description
+ * @title LFU缓存 最不经常使用
+ * @description https://leetcode-cn.com/problems/lfu-cache/
  * @since 2020-04-05 09:48
  */
 public class LFUCache {
@@ -71,7 +71,6 @@ public class LFUCache {
         } else {
             // 没有，但是已经达到最大容量
             if (size == capacity) {
-
                 Node deadNode = removeNode();
                 cache.remove(deadNode.key);
                 size--;

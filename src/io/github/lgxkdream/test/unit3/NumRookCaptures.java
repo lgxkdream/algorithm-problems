@@ -3,8 +3,8 @@ package io.github.lgxkdream.test.unit3;
 /**
  * @author Jackie Lee
  * @version 1.0.0
- * @title NumRookCaptures
- * @description
+ * @title 999. 可以被一步捕获的棋子数
+ * @description https://leetcode-cn.com/problems/available-captures-for-rook/
  * @since 2020-03-26 10:22
  */
 public class NumRookCaptures {
