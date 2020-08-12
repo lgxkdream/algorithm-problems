@@ -65,14 +65,14 @@ public class SmallestRangeCoveringElementsFromKLists {
         return new int[]{st, ed};
     }
 
-}
+    static class Node {
+        int i, j, val;
 
-class Node {
-    int i, j, val;
-
-    public Node(int i, int j, int val) {
-        this.i = i;
-        this.j = j;
-        this.val = val;
+        public Node(int i, int j, int val) {
+            this.i = i;
+            this.j = j;
+            this.val = val;
+        }
     }
 }
+

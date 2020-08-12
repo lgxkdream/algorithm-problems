@@ -35,7 +35,7 @@ public class UpdateMatrix {
         }
         int m = matrix.length;
         int n = matrix[0].length;
-        int[][] v = new int[m][n];
+        int[][] v = new int[m][n]; // v[i][j]=1代表为0
         Queue<int[]> queue = new LinkedList<>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -55,7 +55,7 @@ public class UpdateMatrix {
                 int dy = y + dxy[i + 1];
                 if (dx >= 0 && dx < m && dy >= 0 && dy < n && v[dx][dy] == 0) {
                     matrix[dx][dy] = matrix[x][y] + 1;
-                    v[dx][dy] = 1;
+                    v[dx][dy] = 1; // 遍历过的标记为0
                     queue.offer(new int[]{dx, dy});
                 }
             }
