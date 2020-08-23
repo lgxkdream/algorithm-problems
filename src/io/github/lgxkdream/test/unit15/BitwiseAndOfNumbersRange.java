@@ -20,9 +20,17 @@ public class BitwiseAndOfNumbersRange {
         System.out.println(rangeBitwiseAnd(0, 1));
     }
 
+    /**
+     * 公共前缀
+     */
     public static int rangeBitwiseAnd(int m, int n) {
-        int result = 0;
-        return result;
+        int shift = 0;
+        while (m < n) {
+            m = m >> 1;
+            n = n >> 1;
+            shift++;
+        }
+        return m << shift;
     }
 
 }
