@@ -1,5 +1,8 @@
 package io.github.lgxkdream.test.unit15;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Jacky Lee
  * @version 1.0.0
@@ -23,7 +26,20 @@ public class RobotReturnToOrigin {
     }
 
     public static boolean judgeCircle(String moves) {
-        return false;
+        Map<Character, Integer> moveMap = new HashMap<>();
+        moveMap.put('R', 1);
+        moveMap.put('L', -1);
+        moveMap.put('U', 1);
+        moveMap.put('D', -1);
+        int x = 0, y = 0;
+        for (char c : moves.toCharArray()) {
+            if (c == 'R' || c == 'L') {
+                x += moveMap.get(c);
+            } else {
+                y += moveMap.get(c);
+            }
+        }
+        return x == 0 && y == 0;
     }
 
 }
