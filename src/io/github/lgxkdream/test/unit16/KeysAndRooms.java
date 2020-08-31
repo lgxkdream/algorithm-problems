@@ -2,7 +2,9 @@ package io.github.lgxkdream.test.unit16;
 
 import com.google.common.collect.Lists;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @author Jacky Lee
@@ -24,13 +26,13 @@ public class KeysAndRooms {
          * 由于我们能够进入每个房间，我们返回 true。
          */
         List<List<Integer>> rooms = Lists.newArrayList(Lists.newArrayList(1), Lists.newArrayList(2), Lists.newArrayList(3), Lists.newArrayList());
-        System.out.println(canVisitAllRooms(rooms));
+        System.out.println(canVisitAllRooms2(rooms));
         /**
          * 输出：false
          * 解释：我们不能进入 2 号房间。
          */
         rooms = Lists.newArrayList(Lists.newArrayList(1, 3), Lists.newArrayList(3, 0, 1), Lists.newArrayList(2), Lists.newArrayList(0));
-        System.out.println(canVisitAllRooms(rooms));
+        System.out.println(canVisitAllRooms2(rooms));
     }
 
     private static int num;
@@ -46,14 +48,36 @@ public class KeysAndRooms {
     }
 
     private static void canVisitAllRooms(List<List<Integer>> rooms, boolean[] visited, int index) {
-        visited[index] = true;
         num++;
+        visited[index] = true;
         List<Integer> keys = rooms.get(index);
         for (Integer key : keys) {
             if (!visited[key]) {
                 canVisitAllRooms(rooms, visited, key);
             }
         }
+    }
+
+    /**
+     * 广度优先遍历思想
+     */
+    public static boolean canVisitAllRooms2(List<List<Integer>> rooms) {
+        int size = rooms.size(), num = 0;
+        boolean[] visited = new boolean[size];
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(0);
+        while (!queue.isEmpty()) {
+            Integer poll = queue.poll();
+            if (!visited[poll]) {
+                num++;
+                visited[poll] = true;
+                List<Integer> keys = rooms.get(poll);
+                for (Integer key : keys) {
+                    queue.offer(key);
+                }
+            }
+        }
+        return num == size;
     }
 
 }
