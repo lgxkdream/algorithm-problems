@@ -23,13 +23,37 @@ public class KeysAndRooms {
          * 最后我们去了 3 号房间。
          * 由于我们能够进入每个房间，我们返回 true。
          */
-        List<List<Integer>> rooms = Lists.newArrayList(Lists.newArrayList(1), Lists.newArrayList(2), Lists.newArrayList(3), Lists.newArrayList(2));
+        List<List<Integer>> rooms = Lists.newArrayList(Lists.newArrayList(1), Lists.newArrayList(2), Lists.newArrayList(3), Lists.newArrayList());
+        System.out.println(canVisitAllRooms(rooms));
+        /**
+         * 输出：false
+         * 解释：我们不能进入 2 号房间。
+         */
+        rooms = Lists.newArrayList(Lists.newArrayList(1, 3), Lists.newArrayList(3, 0, 1), Lists.newArrayList(2), Lists.newArrayList(0));
         System.out.println(canVisitAllRooms(rooms));
     }
 
+    private static int num;
+
+    /**
+     * 深度优先遍历思想
+     */
     public static boolean canVisitAllRooms(List<List<Integer>> rooms) {
-        boolean result = false;
-        return result;
+        int size = rooms.size();
+        boolean[] visited = new boolean[size];
+        canVisitAllRooms(rooms, visited, 0);
+        return num == size;
+    }
+
+    private static void canVisitAllRooms(List<List<Integer>> rooms, boolean[] visited, int index) {
+        visited[index] = true;
+        num++;
+        List<Integer> keys = rooms.get(index);
+        for (Integer key : keys) {
+            if (!visited[key]) {
+                canVisitAllRooms(rooms, visited, key);
+            }
+        }
     }
 
 }
