@@ -26,6 +26,9 @@ public class PredictTheWinner {
         System.out.println(PredictTheWinner(new int[]{1, 5, 233, 7}));
     }
 
+    /**
+     * TODO
+     */
     public static boolean PredictTheWinner(int[] nums) {
         return false;
     }
