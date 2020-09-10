@@ -33,7 +33,7 @@ public class CombinationSumII {
          *   [5]
          * ]
          */
-//        System.out.println(combinationSum2(new int[]{2, 5, 2, 1, 2}, 5));
+        System.out.println(combinationSum2(new int[]{2, 5, 2, 1, 2}, 5));
     }
 
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -48,10 +48,13 @@ public class CombinationSumII {
             result.add(new ArrayList<>(cur));
             return;
         }
-        if (target < 0) {
-            return;
-        }
         for (int i = index; i < candidates.length; i++) {
+            if (target - candidates[i] < 0) {
+                break;
+            }
+            if (i > index && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
             cur.add(candidates[i]);
             combinationSum2(result, cur, i + 1, candidates, target - candidates[i]);
             cur.remove(cur.size() - 1);
