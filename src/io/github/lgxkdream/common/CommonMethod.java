@@ -9,11 +9,19 @@ package io.github.lgxkdream.common;
  */
 public class CommonMethod {
 
+    /**
+     * 链表打印
+     */
     public static void printlnLinkedList(ListNode root) {
         while (root != null) {
             System.out.println(root.val);
             root = root.next;
         }
     }
+
+    /**
+     * 二叉树打印
+     */
+    // BinaryTreeLevelOrderTraversal.levelOrder1
 
 }
