@@ -27,6 +27,7 @@ public class ContainsDuplicateIII {
     }
 
     /**
+     * 滑动窗口+有序集合
      * nums[i] - nums[j] <= t   ==> nums[j] >= nums[i] - t
      * nums[i] - nums[j] >= -t  ==> nums[j] <= nums[i] + t
      * i - j <= k               j >=0 ==> i<=k
