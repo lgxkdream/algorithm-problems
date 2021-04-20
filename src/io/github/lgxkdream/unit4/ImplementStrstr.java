@@ -24,20 +24,20 @@ public class ImplementStrstr {
         System.out.println(strStr("", ""));
     }
 
+    /**
+     * 暴力匹配
+     */
     public static int strStr(String haystack, String needle) {
-        if (needle == "") {
+        if (needle.length() == 0) {
             return 0;
         }
         int len1 = haystack.length(), len2 = needle.length();
-        if (len1 < len2) {
-            return -1;
-        }
         for (int i = 0; i < len1 - len2 + 1; i++) {
-            for (int j = i; j < i + len2; j++) {
-                if (haystack.charAt(j) != needle.charAt(j - i)) {
+            for (int j = 0; j < len2; j++) {
+                if (haystack.charAt(i + j) != needle.charAt(j)) {
                     break;
                 }
-                if (j == i + len2 - 1) {
+                if (j == len2 - 1) {
                     return i;
                 }
             }
