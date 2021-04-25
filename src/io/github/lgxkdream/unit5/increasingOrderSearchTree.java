@@ -55,6 +55,7 @@ public class increasingOrderSearchTree {
                     res = pop;
                     temp = res;
                 } else {
+                    temp.left = null;
                     temp.right = pop;
                     temp = temp.right;
                 }
@@ -64,6 +65,8 @@ public class increasingOrderSearchTree {
                 node = node.left;
             }
         }
+        temp.left = null;
+        temp.right = null;
         return res;
     }
 
