@@ -3,6 +3,8 @@ package io.github.lgxkdream.unit5;
 import io.github.lgxkdream.common.TreeNode;
 import io.github.lgxkdream.unit2.BinaryTreeLevelOrderTraversal;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -43,7 +45,26 @@ public class increasingOrderSearchTree {
     }
 
     public static TreeNode increasingBST(TreeNode root) {
-        return null;
+        TreeNode res = null, temp = null;
+        TreeNode node = root;
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        while (!stack.isEmpty() || node != null) {
+            if (node == null) {
+                TreeNode pop = stack.pop();
+                if (temp == null) {
+                    res = pop;
+                    temp = res;
+                } else {
+                    temp.right = pop;
+                    temp = temp.right;
+                }
+                node = pop.right;
+            } else {
+                stack.push(node);
+                node = node.left;
+            }
+        }
+        return res;
     }
 
 }
