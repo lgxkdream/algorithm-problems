@@ -14,7 +14,7 @@ import java.util.List;
  * @description https://leetcode-cn.com/problems/increasing-order-search-tree/
  * @since 4/25/21 12:36 AM
  */
-public class increasingOrderSearchTree {
+public class IncreasingOrderSearchTree {
 
     public static void main(String[] args) {
         TreeNode p1 = new TreeNode(1);
