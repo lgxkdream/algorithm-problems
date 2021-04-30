@@ -13,15 +13,28 @@ public class SingleNumberII {
         /**
          * 输出：3
          */
-        System.out.println(singleNumber(new int[]{2,2,3,2}));
+        System.out.println(singleNumber(new int[]{2, 2, 3, 2}));
         /**
          * 输出：99
          */
-        System.out.println(singleNumber(new int[]{0,1,0,1,0,1,99}));
+        System.out.println(singleNumber(new int[]{0, 1, 0, 1, 0, 1, 99}));
     }
 
+    /**
+     * 依次确定每一个二进制位
+     */
     public static int singleNumber(int[] nums) {
-        return 0;
+        int res = 0;
+        for (int i = 0; i < 32; i++) {
+            int sum = 0;
+            for (int num : nums) {
+                sum += (num >> i & 1);
+            }
+            if (sum % 3 != 0) {
+                res |= (1 << i);
+            }
+        }
+        return res;
     }
 
 }
