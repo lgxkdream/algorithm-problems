@@ -5,7 +5,7 @@ import io.github.lgxkdream.common.ListNode;
 /**
  * @author Jackie Lee
  * @version 1.0.0
- * @title 反转链表
+ * @title 链表相邻元素翻转
  * @description https://leetcode-cn.com/problems/reverse-linked-list/
  * @since 2020-05-16 10:49
  */
@@ -23,7 +23,7 @@ public class ReverseLinkedList {
         node3.next = node4;
         node4.next = node5;
         ListNode reverse = reverseList(node1);
-        // ListNode reverse = reverseList1(node1);
+//        ListNode reverse = reverseList1(node1);
         while (reverse != null) {
             System.out.println(reverse.val);
             reverse = reverse.next;
@@ -34,27 +34,29 @@ public class ReverseLinkedList {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode rehead = reverseList(head.next);
+        ListNode newHead = head.next;
+        ListNode node = reverseList(head.next.next);
         head.next.next = head;
-        head.next = null;
-        return rehead;
+        head.next = node;
+        return newHead;
     }
 
     public static ListNode reverseList1(ListNode head) {
         if (head == null) {
             return head;
         }
-        ListNode pre = head;
-        ListNode cur = head.next;
-        ListNode temp;
-        while (cur != null) {
-            temp = cur.next;
-            cur.next = pre;
+        ListNode newHead = new ListNode(0);
+        newHead.next = head;
+        ListNode pre = newHead, cur = newHead.next, next;
+        while (cur != null && cur.next != null) {
+            next = cur.next.next;
+            pre.next = cur.next;
+            cur.next.next = cur;
+            cur.next = next;
             pre = cur;
-            cur = temp;
+            cur = next;
         }
-        head.next = null;
-        return pre;
+        return newHead.next;
     }
 
 }
