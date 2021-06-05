@@ -43,12 +43,11 @@ public class RemoveLinkedListElements {
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-        node4.next = node5;
-        node5.next = null;
+        node4.next = null;
         /**
          * 输出：[]
          */
-        listNode = removeElements(node1, 6);
+        listNode = removeElements(node1, 7);
         while (listNode != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
@@ -61,12 +60,14 @@ public class RemoveLinkedListElements {
         }
         ListNode myHead = new ListNode(-1);
         myHead.next = head;
-        ListNode cur = myHead;
-        while (cur.next != null) {
-            ListNode pre = cur;
-            cur = cur.next;
+        ListNode pre = myHead, cur = myHead.next;
+        while (cur != null) {
             if (cur.val == val) {
-                pre.next = cur.next;
+                cur = cur.next;
+                pre.next = cur;
+            } else {
+                pre = pre.next;
+                cur = cur.next;
             }
         }
         return myHead.next;
