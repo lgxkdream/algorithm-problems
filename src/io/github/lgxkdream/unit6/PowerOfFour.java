@@ -25,7 +25,17 @@ public class PowerOfFour {
     }
 
     public static boolean isPowerOfFour(int n) {
-        return false;
+        int count = 0, index = 0, curIndex = 0;
+        while (n > 0) {
+            int sub = n & 1;
+            if (sub == 1) {
+                index = curIndex;
+            }
+            count += sub;
+            n >>= 1;
+            curIndex++;
+        }
+        return count == 1 && index % 2 == 0;
     }
 
 }
