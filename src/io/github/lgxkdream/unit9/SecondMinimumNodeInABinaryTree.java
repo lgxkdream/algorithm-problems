@@ -40,9 +40,22 @@ public class SecondMinimumNodeInABinaryTree {
     }
 
     public static int findSecondMinimumValue(TreeNode root) {
-        int res = 0;
+        return dfs(root, root.val);
+    }
 
-        return res;
+    private static int dfs(TreeNode node, int val) {
+        if (node == null) {
+            return -1;
+        }
+        if (node.val < val) {
+            return val;
+        }
+        int l = dfs(node.left, val);
+        int r = dfs(node.right, val);
+        if (node.val < l && node.val < r) {
+            return Math.min(l, r);
+        }
+        return Math.max(l, r);
     }
 
 }
