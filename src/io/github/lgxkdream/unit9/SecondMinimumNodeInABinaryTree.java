@@ -47,12 +47,12 @@ public class SecondMinimumNodeInABinaryTree {
         if (node == null) {
             return -1;
         }
-        if (node.val < val) {
-            return val;
+        if (node.val > val) {
+            return node.val;
         }
         int l = dfs(node.left, val);
         int r = dfs(node.right, val);
-        if (node.val < l && node.val < r) {
+        if (l > val && r > val) {
             return Math.min(l, r);
         }
         return Math.max(l, r);
