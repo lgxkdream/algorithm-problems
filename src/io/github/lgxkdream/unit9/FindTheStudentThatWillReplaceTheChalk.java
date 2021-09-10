@@ -44,12 +44,12 @@ public class FindTheStudentThatWillReplaceTheChalk {
         if (len <= 1) {
             return 0;
         }
-        int[] prefixChalk = new int[len + 1];
+        long[] prefixChalk = new long[len + 1];
         for (int i = 0; i < len; i++) {
             prefixChalk[i + 1] += prefixChalk[i];
             prefixChalk[i + 1] += chalk[i];
         }
-        k = k % prefixChalk[len];
+        k %= prefixChalk[len];
         int res = 0;
         for (int i = 0; i <= len; i++) {
             if (k >= prefixChalk[i] && k < prefixChalk[i + 1]) {
