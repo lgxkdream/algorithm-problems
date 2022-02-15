@@ -1,6 +1,7 @@
 package io.github.lgxkdream.unit11;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,8 +31,23 @@ public class LuckyNumbersInAMatrix {
     }
 
     public static List<Integer> luckyNumbers(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[] minRow = new int[m], maxCol = new int[n];
+        Arrays.fill(minRow, Integer.MAX_VALUE);
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                minRow[i] = Math.min(minRow[i], matrix[i][j]);
+                maxCol[j] = Math.max(maxCol[j], matrix[i][j]);
+            }
+        }
         List<Integer> res = new ArrayList<>();
-
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == minRow[i] && matrix[i][j] == maxCol[j]) {
+                    res.add(matrix[i][j]);
+                }
+            }
+        }
         return res;
     }
 
