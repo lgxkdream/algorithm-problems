@@ -1,5 +1,9 @@
 package io.github.lgxkdream.unit11;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Jacky Lee
  * @version 1.0.0
@@ -23,6 +27,17 @@ public class HandOfStraights {
     }
 
     public static boolean isNStraightHand(int[] hand, int groupSize) {
+        if (hand.length % groupSize != 0) {
+            return false;
+        }
+        Arrays.sort(hand);
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int h : hand) {
+            map.put(h, map.getOrDefault(h, 0) + 1);
+        }
+        for (int h : hand) {
+            
+        }
         return false;
     }
 
