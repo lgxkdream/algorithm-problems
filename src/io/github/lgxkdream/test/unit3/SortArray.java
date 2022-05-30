@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Jackie Lee
  * @version 1.0.0
  * @title SortArray
- * @description 冒泡、选择、快速排序
+ * @description 冒泡、选择、插入、快速排序
  * @since 2020-03-31 09:46
  */
 public class SortArray {
@@ -44,6 +44,19 @@ public class SortArray {
     }
 
     public static int[] sortArray2(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (nums[j - 1] > nums[j]) {
+                    nums[j - 1] = nums[j - 1] ^ nums[j];
+                    nums[j] = nums[j - 1] ^ nums[j];
+                    nums[j - 1] = nums[j - 1] ^ nums[j];
+                }
+            }
+        }
+        return nums;
+    }
+
+    public static int[] sortArray3(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
         return nums;
     }
