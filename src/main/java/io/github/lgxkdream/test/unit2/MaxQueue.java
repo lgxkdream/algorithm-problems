@@ -1,8 +1,8 @@
 package io.github.lgxkdream.test.unit2;
 
-import javafx.collections.transformation.SortedList;
-
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @author Jackie Lee
